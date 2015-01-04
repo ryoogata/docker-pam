@@ -1,9 +1,9 @@
-FROM tianon/centos:6.5
-MAINTAINER SequenceIQ
+FROM chef/centos-6
+MAINTAINER ryoogata
 
 ADD Centos-Source.repo /etc/yum.repos.d/Centos-Source.repo
 
-RUN yum install -y tar bzip2 yum-utils rpm-build
+RUN yum install -y tar bzip2 yum-utils rpm-build whici wget
 
 RUN yum-builddep -y pam
 RUN yumdownloader --source pam
